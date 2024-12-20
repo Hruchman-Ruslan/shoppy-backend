@@ -30,8 +30,8 @@ export class AuthService {
     const token = this.jwtService.sign(tokenPayload);
 
     response.cookie('Authentication', token, {
-      secure: true, // Cookies are not visible in Postman with HTTPS connection
-      // secure: false, // Cookies are visible in Postman with HTTP connection
+      // secure: true, // Cookies are not visible in Postman with HTTPS connection bug with /me route
+      secure: false, // Cookies are visible in Postman with HTTP connection !!! fix the problem with /me route !!!
       httpOnly: true,
       expires,
     });
