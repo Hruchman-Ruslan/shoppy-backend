@@ -5,12 +5,13 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
-      - npm install
+      - npm install -g pnpm
+      - pnpm install
 
   build:
     commands:
-      - npx prisma generate
-      - npm run build
+      - pnpm prisma generate
+      - pnpm build
 
 artifacts:
   files:
